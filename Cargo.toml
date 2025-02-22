@@ -19,10 +19,9 @@ puffin = ["dep:puffin", "profiling/profile-with-puffin"]
 [lib]
 
 [dependencies]
-parking_lot = "0.12" # Used for Mutex & RwLock. Note that wgpu already depends on parking_lot as well.
-thiserror = "2"
-# TODO: Should use `default-features=false`, waiting on https://github.com/gfx-rs/wgpu/pull/6946
-wgpu = "24.0.0"
+parking_lot = { version = "0.12", default-features = false } # Used for Mutex & RwLock. Note that wgpu already depends on parking_lot as well.
+thiserror = { version = "2", default-features = false }
+wgpu = { version = "24.0.0", default-features = false }
 
 tracy-client = { version = "0.18", optional = true }
 puffin = { version = "0.19.1", optional = true }
